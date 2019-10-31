@@ -1,0 +1,17 @@
+const Schema = require("@src/mongoose").Schema;
+const validator = require("validator");
+
+module.exports = new Schema(
+    {
+        // schema
+        isActive: {
+            type: Boolean,
+            default: true
+        },
+        isDeleted: {
+            type: Boolean,
+            default: false
+        }
+    },
+    { timestamps: true }
+);

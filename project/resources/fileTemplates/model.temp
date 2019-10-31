@@ -1,0 +1,11 @@
+const mongoose = require("@src/mongoose");
+const autoIncrement = require("./plugins/autoIncrement");
+const paginatePlugin = require("mongoose-paginate-v2");
+
+const {{modelUpperCase}}Schema = require("./{{model}}/schema");
+
+// auto increment plugin
+{{modelUpperCase}}Schema.plugin(autoIncrement, { model: "{{modelUpperCase}}" });
+{{modelUpperCase}}Schema.plugin(paginatePlugin);
+
+module.exports = mongoose.model("{{modelUpperCase}}", {{modelUpperCase}}Schema);

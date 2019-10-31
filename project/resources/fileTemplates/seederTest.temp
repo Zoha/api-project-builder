@@ -1,0 +1,27 @@
+const { expect } = require("chai");
+require("../../server");
+const seeder = require("@seeders/{{model}}");
+const {{model}} = require("@models/{{model}}");
+
+describe("{{model}} seeder", () => {
+    beforeEach(async () => {
+        await {{model}}.deleteMany();
+        await {{model}}.resetCount();
+    });
+
+    it("create a {{model}} with {{model}} seeder", async () => {
+        let created = await seeder();
+
+        expect(created).to.be.instanceOf({{model}});
+    });
+
+    it("create multiple {{model}} with {{model}} seeder and return as array", async () => {
+        let createdInstances = await seeder(5);
+
+        expect(createdInstances)
+            .to.be.an("array")
+            .and.lengthOf(5);
+
+        expect(createdInstances[0]).to.be.instanceOf({{model}});
+    });
+});

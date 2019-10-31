@@ -1,0 +1,20 @@
+{
+    "name": "api-project-builder",
+    "version": "1.0.0",
+    "description": "an app for creating base structure of creating an api with node",
+    "main": "command.js",
+    "bin": {
+        "api-project-builder": "./bin/index.js"
+    },
+    "author": "Zoha Banam <Zoha.Banam@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^2.4.2",
+        "commander": "^3.0.2",
+        "copy-dir": "^1.2.0",
+        "cross-spawn": "^7.0.1",
+        "inquirer": "^7.0.0",
+        "ncp": "^2.0.0",
+        "random-hash": "^4.0.1"
+    }
+}

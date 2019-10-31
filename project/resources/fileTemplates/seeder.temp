@@ -1,0 +1,20 @@
+const faker = require("faker");
+const Model = require("@models/{{model}}");
+
+module.exports = async (custom = {}, count = 1) => {
+    if (typeof custom === "number") {
+        count = custom;
+        custom = {};
+    }
+
+    let created = [];
+    for (let i = 0; i < count; i++) {
+        let data = {
+            // data
+            ...custom
+        };
+        created.push(await Model.create(data));
+    }
+
+    return created.length > 1 ? created : created[0];
+};
