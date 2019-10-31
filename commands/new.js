@@ -94,7 +94,7 @@ const installPackages = async folderName => {
         let args = ["install", "--save", "--loglevel", "error"];
 
         const child = spawn(command, args, {
-            cwd: "barstore",
+            cwd: folderName,
             stdio: "inherit"
         });
         child.on("error", err => {
