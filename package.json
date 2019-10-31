@@ -4,7 +4,7 @@
     "description": "an app for creating base structure of creating an api with node",
     "main": "command.js",
     "bin": {
-        "api-project-builder": "./bin/index.js"
+        "api-project-builder": "./command.js"
     },
     "author": "Zoha Banam <Zoha.Banam@gmail.com>",
     "license": "ISC",
