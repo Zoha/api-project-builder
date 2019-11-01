@@ -22,4 +22,5 @@ module.exports = async modelName => {
     );
 
     console.log(green(modelName + " model was created"));
+    process.exit();
 };

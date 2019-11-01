@@ -6,6 +6,4 @@ module.exports = {
     isDevelopment: process.env.NODE_ENV === "development",
     isProduction: process.env.NODE_ENV === "production",
     isTest: process.env.NODE_ENV === "test",
-    startAndFirstQuestionDelay: 10000,
-    endAndResultDelay: 10000
 };

@@ -1,0 +1,36 @@
+const { required: requiredAuth } = require("@middleware/admin");
+const { ObjectId } = require("mongoose").Schema.Types;
+
+module.exports = {
+    fields: {
+        // fields
+        isActive: {
+            type: Boolean,
+            creatable: false
+        },
+        isDeleted: {
+            type: Boolean,
+            creatable: false
+        },
+        createdAt: {
+            type: Date,
+            updatable: false,
+            creatable: false
+        },
+        updatedAt: {
+            type: Date,
+            updatable: false,
+            creatable: false
+        }
+    },
+    routeKeys: ["id", "_id"],
+    paginationMeta: {
+        maxLimit: 200
+    },
+    middleware: {
+        create: [requiredAuth],
+        update: [requiredAuth],
+        delete: [requiredAuth]
+    },
+    routes: ["index", "single", "update", "create", "delete", "count"]
+};

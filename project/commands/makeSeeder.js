@@ -20,4 +20,5 @@ module.exports = async modelName => {
     );
 
     console.log(green(modelName + " seeder was created"));
+    process.exit();
 };
