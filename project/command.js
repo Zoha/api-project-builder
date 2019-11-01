@@ -35,14 +35,4 @@ program
 
 program.command("clear:db [model]").action(require("@commands/clearDb"));
 
-
-program
-	.command("make:admin")
-	.option("-u, --username <value>")
-	.option("-p, --password <value>")
-	.option("-e, --email <value>")
-	.option("-n, --name <value>")
-	.option("-r, --role <value>")
-	.action(require("@commands/makeAdmin"));
-
 program.parse(process.argv);

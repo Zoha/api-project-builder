@@ -87,6 +87,23 @@ const copyEnvFile = async projectFolder => {
     console.log(green("env file copied"));
 };
 
+const copyGitignoreFile = async projectFolder => {
+    console.log(gray("copy gitignore file..."));
+
+    await new Promise((resolve, reject) => {
+        fs.copyFile(
+            path.join(__dirname, "../project", ".gitignore"),
+            path.join(projectFolder, ".gitignore"),
+            err => {
+                if (err) return reject(err);
+                resolve();
+            }
+        );
+    });
+
+    console.log(green("gitignore file copied"));
+};
+
 const installPackages = async folderName => {
     console.log(gray("installing packages..."));
     return new Promise((resolve, reject) => {
@@ -127,6 +144,7 @@ module.exports = async (name, folderName, ctx) => {
         await copyProjectContentToProjectFolder(projectFolder);
         await injectVariables(name, projectFolder);
         await copyEnvFile(projectFolder);
+        await copyGitignoreFile(projectFolder);
 
         console.log(
             gray("---------------- installing packages ----------------")
